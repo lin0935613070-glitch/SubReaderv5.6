@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0F0F"
+    android:padding="18dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Tiêu đề -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🎬 Sub Reader" android:textSize="26sp" android:textColor="#FFFFFF"
+            android:textStyle="bold" android:layout_marginTop="14dp" android:layout_gravity="center_horizontal"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Tự động đọc phụ đề phim" android:textSize="13sp" android:textColor="#888888"
+            android:layout_marginTop="3dp" android:layout_marginBottom="14dp" android:layout_gravity="center_horizontal"/>
+
+        <!-- Trạng thái -->
+        <TextView android:id="@+id/tvStatus" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Đang kiểm tra..."
+            android:textSize="15sp" android:textColor="#FFFFFF" android:textAlignment="center"
+            android:background="@drawable/card_bg" android:padding="14dp" android:layout_marginBottom="10dp"/>
+
+        <!-- Hàng 1: Bật/Tắt + Thử -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <Button android:id="@+id/btnToggle" android:layout_width="0dp" android:layout_height="50dp"
+                android:layout_weight="2" android:text="Bật đọc sub" android:textColor="#FFFFFF"
+                android:backgroundTint="#1DB954" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnTest" android:layout_width="0dp" android:layout_height="50dp"
+                android:layout_weight="1" android:text="🔊 Thử" android:textColor="#CCCCCC"
+                android:backgroundTint="#2A2A2A"/>
+        </LinearLayout>
+
+        <!-- Hàng 2: Nút nổi + Chọn vùng -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="14dp">
+            <Button android:id="@+id/btnFloat" android:layout_width="0dp" android:layout_height="46dp"
+                android:layout_weight="1" android:text="📌 Nút nổi" android:textColor="#FFFFFF"
+                android:backgroundTint="#2196F3" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnSetZone" android:layout_width="0dp" android:layout_height="46dp"
+                android:layout_weight="1" android:text="🔲 Chọn vùng" android:textColor="#FFFFFF"
+                android:backgroundTint="#FF9800" android:layout_marginEnd="6dp"/>
+            <Button android:id="@+id/btnClearHistory" android:layout_width="0dp" android:layout_height="46dp"
+                android:layout_weight="1" android:text="🗑 Reset" android:textColor="#CCCCCC"
+                android:backgroundTint="#2A2A2A"/>
+        </LinearLayout>
+
+        <!-- Sub đang đọc -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/card_bg"
+            android:padding="14dp" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SUB ĐANG ĐỌC" android:textSize="11sp" android:textColor="#888888"
+                android:letterSpacing="0.1" android:layout_marginBottom="6dp"/>
+            <TextView android:id="@+id/tvLastSub" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="(chưa có)"
+                android:textSize="15sp" android:textColor="#E0E0E0" android:minHeight="38dp"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+
+        <!-- HIỂN THỊ TRÊN APP KHÁC -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/card_bg"
+            android:padding="14dp" android:layout_marginBottom="12dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="HIỂN THỊ TRÊN APP KHÁC" android:textSize="11sp" android:textColor="#888888"
+                android:letterSpacing="0.1" android:layout_marginBottom="12dp"/>
+
+            <!-- Bật/tắt khung vùng đọc -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="14dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Hiện khung vùng đọc" android:textColor="#CCCCCC" android:textSize="14sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Khung nổi trên app phim" android:textColor="#666666" android:textSize="12sp"/>
+                </LinearLayout>
+                <Switch android:id="@+id/swShowOverlay" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:checked="true"
+                    android:thumbTint="#1DB954" android:trackTint="#444444"/>
+            </LinearLayout>
+
+            <!-- Độ mờ khung -->
+            <TextView android:id="@+id/tvAlpha" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textColor="#CCCCCC"
+                android:textSize="13sp" android:layout_marginBottom="4dp"/>
+            <SeekBar android:id="@+id/sbAlpha" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:progressTint="#1DB954"
+                android:thumbTint="#1DB954"/>
+        </LinearLayout>
+
+        <!-- VÙNG ĐỌC CỤ THỂ -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/card_bg"
+            android:padding="14dp" android:layout_marginBottom="12dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="6dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="VÙNG ĐỌC CỤ THỂ" android:textSize="11sp"
+                        android:textColor="#888888" android:letterSpacing="0.1"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Tắt = tự nhận 55% dưới màn hình" android:textColor="#555555" android:textSize="11sp"/>
+                </LinearLayout>
+                <Switch android:id="@+id/swUseZone" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:checked="false"
+                    android:thumbTint="#FF9800" android:trackTint="#444444"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutZone" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:visibility="gone">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="👆 Bấm '🔲 Chọn vùng' bên trên để kéo khung trực tiếp trên app phim"
+                    android:textColor="#AAAAAA" android:textSize="13sp" android:padding="10dp"
+                    android:background="#1A1A1A" android:layout_marginTop="6dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- GIỌNG ĐỌC -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/card_bg"
+            android:padding="14dp" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="GIỌNG ĐỌC" android:textSize="11sp" android:textColor="#888888"
+                android:letterSpacing="0.1" android:layout_marginBottom="12dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Ngôn ngữ" android:textColor="#AAAAAA" android:textSize="13sp"
+                android:layout_marginBottom="5dp"/>
+            <Spinner android:id="@+id/spLanguage" android:layout_width="match_parent"
+                android:layout_height="48dp" android:background="@drawable/spinner_bg"
+                android:paddingStart="12dp" android:paddingEnd="12dp" android:layout_marginBottom="12dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Giọng (★★★ = chất lượng cao)" android:textColor="#AAAAAA"
+                android:textSize="13sp" android:layout_marginBottom="5dp"/>
+            <Spinner android:id="@+id/spVoice" android:layout_width="match_parent"
+                android:layout_height="48dp" android:background="@drawable/spinner_bg"
+                android:paddingStart="12dp" android:paddingEnd="12dp"/>
+        </LinearLayout>
+
+        <!-- ĐIỀU CHỈNH -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/card_bg"
+            android:padding="14dp" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ĐIỀU CHỈNH" android:textSize="11sp" android:textColor="#888888"
+                android:letterSpacing="0.1" android:layout_marginBottom="12dp"/>
+
+            <TextView android:id="@+id/tvSpeed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#CCCCCC" android:textSize="13sp" android:layout_marginBottom="3dp"/>
+            <SeekBar android:id="@+id/sbSpeed" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="#1DB954" android:thumbTint="#1DB954" android:layout_marginBottom="12dp"/>
+
+            <TextView android:id="@+id/tvMaxRate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#CCCCCC" android:textSize="13sp" android:layout_marginBottom="3dp"/>
+            <SeekBar android:id="@+id/sbMaxRate" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="#FF6B35" android:thumbTint="#FF6B35" android:layout_marginBottom="4dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Auto tăng tốc khi sub nhanh, tối đa là giá trị này" android:textColor="#555555" android:textSize="11sp" android:layout_marginBottom="12dp"/>
+
+            <TextView android:id="@+id/tvPitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#CCCCCC" android:textSize="13sp" android:layout_marginBottom="3dp"/>
+            <SeekBar android:id="@+id/sbPitch" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="#2196F3" android:thumbTint="#2196F3" android:layout_marginBottom="12dp"/>
+
+            <TextView android:id="@+id/tvVolume" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#CCCCCC" android:textSize="13sp" android:layout_marginBottom="3dp"/>
+            <SeekBar android:id="@+id/sbVolume" android:layout_width="match_parent" android:layout_height="wrap_content" android:progressTint="#FF9800" android:thumbTint="#FF9800"/>
+        </LinearLayout>
+
+        <!-- TUỲ CHỌN -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/card_bg"
+            android:padding="14dp" android:layout_marginBottom="24dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="TUỲ CHỌN" android:textSize="11sp" android:textColor="#888888"
+                android:letterSpacing="0.1" android:layout_marginBottom="12dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Bỏ qua text ngắn (&lt;3 ký tự)"
+                    android:textColor="#CCCCCC" android:textSize="13sp"/>
+                <Switch android:id="@+id/swFilter" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:checked="true"
+                    android:thumbTint="#1DB954" android:trackTint="#444444"/>
+            </LinearLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Trễ trước khi đọc (ms)" android:textColor="#CCCCCC"
+                android:textSize="13sp" android:layout_marginBottom="6dp"/>
+            <EditText android:id="@+id/etDelay" android:layout_width="match_parent"
+                android:layout_height="46dp" android:hint="0" android:inputType="number"
+                android:textColor="#FFFFFF" android:textColorHint="#555555"
+                android:background="@drawable/input_bg" android:padding="12dp" android:textSize="13sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

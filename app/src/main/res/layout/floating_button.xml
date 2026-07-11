@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!-- Nút chính bật/tắt -->
+    <ImageButton
+        android:id="@+id/btnFloat"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/ic_mic"
+        android:background="@drawable/float_btn_bg"
+        android:contentDescription="Bật/tắt đọc sub"
+        android:scaleType="centerInside"
+        android:padding="12dp" />
+
+    <!-- Trạng thái nhỏ -->
+    <TextView
+        android:id="@+id/tvFloatStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⏸"
+        android:textSize="10sp"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+
+    <!-- Nút chọn vùng -->
+    <ImageButton
+        android:id="@+id/btnZone"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_zone"
+        android:background="@drawable/float_btn_small_bg"
+        android:contentDescription="Chọn vùng đọc"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

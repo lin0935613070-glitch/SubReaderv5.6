@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Tay nắm kéo — cạnh TRÊN -->
+    <View
+        android:id="@+id/handleTop"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_gravity="top"
+        android:background="#CC1DB954" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:text="▲ kéo"
+        android:textColor="#FFFFFF"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:paddingTop="6dp"
+        android:clickable="false" />
+
+    <!-- Tay nắm kéo — cạnh DƯỚI -->
+    <View
+        android:id="@+id/handleBottom"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_gravity="bottom"
+        android:background="#CC1DB954" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="▼ kéo"
+        android:textColor="#FFFFFF"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:clickable="false" />
+
+    <!-- Tay nắm kéo — cạnh TRÁI -->
+    <View
+        android:id="@+id/handleLeft"
+        android:layout_width="28dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#CC1DB954" />
+
+    <!-- Tay nắm kéo — cạnh PHẢI -->
+    <View
+        android:id="@+id/handleRight"
+        android:layout_width="28dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#CC1DB954" />
+
+    <!-- Nút xong giữa -->
+    <TextView
+        android:id="@+id/tvPickerDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="✅ Xong"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:background="#CC000000"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+</FrameLayout>

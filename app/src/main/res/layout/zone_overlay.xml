@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Nền mờ phía trên vùng đọc -->
+    <View
+        android:id="@+id/zoneMask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88000000" />
+
+    <!-- Vùng đọc được chọn (trong suốt = không có mask) -->
+    <View
+        android:id="@+id/zoneHighlight"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="#33FFFFFF"
+        android:layout_marginBottom="0dp" />
+
+    <!-- Thanh kéo -->
+    <View
+        android:id="@+id/zoneHandle"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="80dp"
+        android:background="#AA1DB954" />
+
+    <!-- Icon kéo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="86dp"
+        android:text="⬆ Kéo lên/xuống để chọn vùng đọc sub ⬇"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:background="#AA000000"
+        android:padding="8dp" />
+
+    <!-- Nút xong -->
+    <TextView
+        android:id="@+id/tvDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="48dp"
+        android:text="✅ Xong"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="#CC1DB954"
+        android:padding="12dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp" />
+
+</FrameLayout>

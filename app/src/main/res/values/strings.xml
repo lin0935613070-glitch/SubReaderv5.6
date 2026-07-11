@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sub Reader</string>
+    <string name="accessibility_service_label">Sub Reader - Đọc phụ đề tự động</string>
+    <string name="accessibility_service_description">Sub Reader theo dõi phụ đề phim trên màn hình và đọc to bằng giọng nói Google TTS. Không thu thập dữ liệu cá nhân.</string>
+</resources>
